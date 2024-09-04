@@ -15,13 +15,13 @@ cfn-lint -I "/github/workspace/SAMtemplates/**/*.y*ml" > samtemplates_scan.txt 2
 awk '/Run scan/ { print } /^[EW][0-9]/ { print; getline; print }'  samtemplates_scan.txt 
 
 
-if ( { grep -q '^[EW][0-9]' 'cloudformation_scan.txt' } ) then
+if grep -q '^[EW][0-9]' 'cloudformation_scan.txt' then
  echo "Errors were found"
  exit 1
 endif
 
 
-if ( { grep -q '^[EW][0-9]' 'samtemplates_scan.txt' } ) then
+if grep -q '^[EW][0-9]' 'samtemplates_scan.txt' then
  echo "Errors were found"
  exit 1
 endif
