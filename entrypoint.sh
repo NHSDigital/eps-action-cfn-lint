@@ -1,9 +1,5 @@
 #!/bin/sh -l
 
-echo "Running ls /github/workspace"
-
-ls /github/workspace
-
 echo "Running cfn lint against cloudformation directory"
 cfn-lint -I "/github/workspace/cloudformation/**/*.y*ml" 
 
