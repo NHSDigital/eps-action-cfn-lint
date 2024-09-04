@@ -1,21 +1,19 @@
-# Hello world docker action
+# EPS cfn-lint action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action runs cfn-lint for all yaml files under cloudformation or SAMtemplates folders.   
+If errors are found then it exits with an error
 
 ## Inputs
 
-## `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
+None
 
 ## Outputs
 
-## `time`
-
-The time we greeted you.
+None
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v2
-with:
-  who-to-greet: 'Mona the Octocat'
+```
+      - name: Run cfn lint
+        uses: anthony-nhs/poc-cfn-lint@main
+```

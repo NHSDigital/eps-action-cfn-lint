@@ -1,6 +1,6 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'EPS cfn-lint'
+description: 'Runs Cfn-lint for cloudformation and SAMtemplates folder'
 runs:
   using: 'docker'
   image: 'Dockerfile'
