@@ -6,6 +6,8 @@
 cfn-lint -v
 echo
 
+echo "hello team"
+
 # we ignore error E0000 which is no file exists as there may not be a cloudformation directory
 
 echo "Running cfn lint against cloudformation directory"
