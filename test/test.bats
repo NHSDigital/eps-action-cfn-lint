@@ -6,14 +6,14 @@ setup() {
 
 
 @test "simple file does not produce errors" {
-	run docker run -it --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/simple:/github/workspace cfn-lint
+	run docker run -i --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/simple:/github/workspace cfn-lint
     assert_success
     assert_output --partial 'cfnlint.runner - INFO - Run scan of template /github/workspace/SAMtemplates/good_file.yml'
     assert_output --partial 'No errors found'
 }
 
 @test "bad file does produce errors" {
-	run docker run -it --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/bad:/github/workspace cfn-lint
+	run docker run -i --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/bad:/github/workspace cfn-lint
     assert_failure
     assert_output --partial 'cfnlint.runner - INFO - Run scan of template /github/workspace/SAMtemplates/bad_file.yml'
     assert_output --partial 'W8001 Condition IsTrue not used'
@@ -22,7 +22,7 @@ setup() {
 }
 
 @test "multiple files are scanned" {
-	run docker run -it --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/multiple_files:/github/workspace cfn-lint
+	run docker run -i --rm -v ${LOCAL_WORKSPACE_FOLDER}./test/resources/multiple_files:/github/workspace cfn-lint
     assert_success
     assert_output --partial 'cfnlint.runner - INFO - Run scan of template /github/workspace/cloudformation/good_file_1.yml'
     assert_output --partial 'cfnlint.runner - INFO - Run scan of template /github/workspace/cloudformation/good_file_2.yaml'
