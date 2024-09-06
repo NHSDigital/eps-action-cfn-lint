@@ -37,6 +37,9 @@ jobs:
           asdf_branch: v0.14.1
         env:
           PYTHON_CONFIGURE_OPTS: --enable-shared 
+    
+      - name: install submodules
+        run: make submodule_update
 
       - name: run lint
         run: make lint
