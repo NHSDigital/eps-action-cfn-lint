@@ -8,7 +8,7 @@ on:
 
 jobs:
   quality_checks:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -39,7 +39,7 @@ jobs:
           PYTHON_CONFIGURE_OPTS: --enable-shared 
     
       - name: install submodules
-        run: make submodule_update
+        run: apt update; apt install bats bats-assert bats-support
 
       - name: run lint
         run: make lint
