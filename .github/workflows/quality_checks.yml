@@ -38,8 +38,8 @@ jobs:
         env:
           PYTHON_CONFIGURE_OPTS: --enable-shared 
     
-      - name: install submodules
-        run: apt update; apt install bats bats-assert bats-support
+      - name: install bats
+        run: sudo apt update; sudo apt install bats bats-assert bats-support
 
       - name: run lint
         run: make lint
