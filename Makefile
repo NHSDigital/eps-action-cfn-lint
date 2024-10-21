@@ -7,6 +7,7 @@ install:
 	sudo chmod -R 777 /usr/lib/bats
 	git clone https://github.com/ztombol/bats-support /usr/lib/bats/bats-support
 	git clone https://github.com/ztombol/bats-assert /usr/lib/bats/bats-assert
+	ls -alh /usr/lib/bats/bats-support
 
 test:
 	bats test/test.bats
