@@ -8,7 +8,7 @@ install:
 	git clone https://github.com/bats-core/bats-support /usr/lib/bats/bats-support
 	git clone https://github.com/bats-core/bats-assert /usr/lib/bats/bats-assert
 	git clone https://github.com/sstephenson/bats.git /tmp/bats
-	sudo -u $(whoami) /tmp/bats/install.sh /usr/local
+	sudo /tmp/bats/install.sh /usr/local
 
 test:
 	bats test/test.bats
