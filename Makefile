@@ -9,6 +9,7 @@ install:
 	git clone https://github.com/bats-core/bats-assert /usr/lib/bats/bats-assert
 	git clone https://github.com/sstephenson/bats.git /tmp/bats
 	cd /tmp/bats
+	ls -alh .
 	./install.sh /usr/local
 	cd -
 
