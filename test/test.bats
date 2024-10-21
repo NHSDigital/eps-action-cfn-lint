@@ -1,4 +1,7 @@
 setup() {
+    ls -lha /usr/lib/bats/bats-support
+    ls -lha /usr/lib/bats/bats-assert
+    
     load '/usr/lib/bats/bats-support/load'
     load '/usr/lib/bats/bats-assert/load'
     docker build -t cfn-lint .
