@@ -3,7 +3,8 @@
 install:
 	sudo apt-get update
 	sudo apt-get install -y git bats
-	mkdir -p /usr/lib/bats
+	sudo mkdir -p /usr/lib/bats
+	sudo chmod -R 777 /usr/lib/bats
 	git clone https://github.com/ztombol/bats-support /usr/lib/bats/bats-support
 	git clone https://github.com/ztombol/bats-assert /usr/lib/bats/bats-assert
 
