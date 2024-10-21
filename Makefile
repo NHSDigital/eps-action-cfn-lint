@@ -4,7 +4,7 @@ install:
 	sudo apt-get update
 	sudo apt-get install -y git bats
 	sudo mkdir -p /usr/lib/bats
-	sudo chmod -R 755 /usr/lib/bats
+	sudo chmod -R 777 /usr/lib/bats
 	git clone https://github.com/bats-core/bats-support /usr/lib/bats/bats-support
 	git clone https://github.com/bats-core/bats-assert /usr/lib/bats/bats-assert
 
