@@ -3,8 +3,9 @@
 install:
 	sudo apt-get update
 	sudo apt-get install -y git bats
-	git clone https://github.com/ztombol/bats-support /usr/lib/bats/bats-support/bats-support
-	git clone https://github.com/ztombol/bats-assert /usr/lib/bats/bats-support/bats-assert
+	mkdir -p /usr/lib/bats
+	git clone https://github.com/ztombol/bats-support /usr/lib/bats/bats-support
+	git clone https://github.com/ztombol/bats-assert /usr/lib/bats/bats-assert
 
 test:
 	bats test/test.bats
